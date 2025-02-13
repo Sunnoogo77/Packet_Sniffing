@@ -1,0 +1,1 @@
+# Variables de config (DB, API Keys)
