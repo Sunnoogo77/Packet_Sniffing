@@ -1,6 +1,12 @@
 import socket
-from db import insert_into_table
-from models import TABLES
+import sys, os
+# Get the absolute path to the project root (Packet_Sniffing)
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")) # Adjust the ".." parts based on your directory depth
+sys.path.insert(0, project_root) 
+
+
+from src.storage.db import insert_into_table
+from src.storage.models import TABLES
 
 def get_hostname(ip_adrr):
     """Essaie de récupérer le hostname via une requête DNS inverse"""
