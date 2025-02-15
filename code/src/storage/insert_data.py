@@ -19,7 +19,7 @@ def insert_packet(data):
 def insert_known_device(mac_address, ip_address):
     """Ajoute un appareil détecté dans known_devices uniquement s'il n'existe pas déjà."""
 
-    existing_device = fetch_data(TABLES["known_devices"], conditions={"mac_address": mac_address})
+    existing_device = fetch_data(TABLES["known_devices"], conditions={"mac_address": ip_address})
     
     if existing_device :
         print(f"⚠️ L'appareil {mac_address} existe déjà dans la base.")
