@@ -58,10 +58,12 @@ def analyse_packet(packet):
                 "data_size": data_size
             }
             
-            insert_packet(data)    
+            insert_packet(data)   
             
             if src_mac:
                 insert_known_device(src_mac, src_ip)
+                if dst_mac:
+                    insert_known_device(dst_mac, dst_ip)
 
 def main():
     """Configuration de l'utilisateur et démarrage du sniffing."""
