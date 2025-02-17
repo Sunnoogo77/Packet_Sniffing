@@ -2,10 +2,11 @@
 
 # Il sagit ici d'un code juste pour creer la mabranche celle de sniffing ( pour la générations des donnés )
 
-from scapy.all import  sniff, IP, TCP, UDP, DNS, get_if_list
+from scapy.all import  sniff, IP, TCP, UDP, DNS
 from datetime import datetime
 import sys
 import os
+
 #Définition du repertoire où stocker les fichiers .pcap
 PCAP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "pcap_files"))  # ✅ Correct
 
@@ -76,5 +77,6 @@ def main():
     sniff(iface=interface, prn=analyse_packet, count=packet_count, store=10)
 
 if __name__ == "__main__":
-    print("-----------------\n")
+    print("-----------------"*5 +"\n")
+    print("-----------------"*5 +"\n")
     main()

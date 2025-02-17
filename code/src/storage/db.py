@@ -69,3 +69,17 @@ def fetch_data(table_name, limit=10, conditions=None):
     except Exception as e:
         print(f"❌ Erreur lors de la récupération des données de {table_name} : {e}")
         return None
+
+def update_table(table_name, data, conditions):
+    """Met à jour une table avec des conditions spécifiques."""
+    try:
+        query = supabase.table(table_name).update(data)
+
+        if conditions:
+            for key, value in conditions.items():
+                query = query.eq(key, value)
+
+        query.execute()
+        print(f"✅ Mise à jour de {table_name} réussie.")
+    except Exception as e:
+        print(f"❌ Erreur lors de la mise à jour de {table_name} : {e}")
