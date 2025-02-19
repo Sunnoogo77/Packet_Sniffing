@@ -1,7 +1,5 @@
 # Script de capture avec Scapy
 
-# Il sagit ici d'un code juste pour creer la mabranche celle de sniffing ( pour la générations des donnés )
-
 from scapy.all import  sniff, IP, TCP, UDP, DNS
 from datetime import datetime
 import sys
