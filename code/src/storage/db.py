@@ -22,22 +22,6 @@ def insert_into_table(table_name, data):
     except Exception as e:
         print(f"\n\t❌ Erreur d'insertion des données: {e}")
 
-# def fetch_data(table_name, limit=10, conditions=None):
-#     """Récupère des données d'une table avec des conditions facultatives."""
-#     try:
-#         query = supabase.table(table_name).select("*").limit(limit)
-        
-#         # Appliquer les conditions si elles existent
-#         if conditions:
-#             for key, value in conditions.items():
-#                 query = query.eq(list(conditions.keys())[0], list(conditions.values())[0])
-
-#         response = query.execute()
-#         return response
-#     except Exception as e:
-#         print(f"❌ Erreur lors de la récupération des données de {table_name} : {e}")
-#         return None
-
 def update_last_seen(mac_address):
     """Met à jour le champ last_seen pour un appareil existant."""
     try:
@@ -60,7 +44,7 @@ def fetch_data(table_name, limit=10, conditions=None):
 
         response = query.execute()
 
-        if response.data is None:  # Vérifier si data est None, ce qui indique une erreur
+        if response.data is None:  
             print(f"❌ Erreur Supabase lors de la récupération des données de {table_name} : {response.error}")
             return None
 
